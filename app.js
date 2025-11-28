@@ -1,3 +1,5 @@
 var a = "Hello World";
 
-function b() {}
+function b() {
+  console.log("Soy la función b!");
+}
