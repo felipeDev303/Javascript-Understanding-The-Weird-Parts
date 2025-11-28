@@ -1,0 +1,155 @@
+## 🌍 **1. Global Environment**
+
+El **Global Environment** es el _entorno léxico más externo_ donde inicia la ejecución de JavaScript.
+
+Incluye:
+
+### ✔ **1. Environment Record global**
+
+Un registro interno donde el motor guarda **todas las variables globales**:
+
+```js
+var x = 10; // se guarda en el Global Environment
+let y = 20; // también se guarda (en el Lexical Environment global)
+```
+
+### ✔ **2. Outer Environment Reference = null**
+
+No tiene “padre”, porque está en la raíz.
+
+### ✔ **3. Está vinculado al Global Object**
+
+El Global Environment se compone de:
+
+- **Global Lexical Environment** (let/const)
+- **Global Variable Environment** (var y funciones)
+
+Estos a su vez están conectados al **global object**.
+
+📌 **Es el contexto donde tu programa vive y se carga inicialmente.**
+
+---
+
+## 🏛️ **2. Global Object**
+
+Es un **objeto especial** creado automáticamente por el motor de JS al iniciar la ejecución.
+
+Depende del entorno:
+
+- En **navegador** → `window`
+- En **Node.js** → `global`
+- En **Web Workers** → `self`
+
+Contiene:
+
+### ✔ Funciones globales
+
+`parseInt()`, `isNaN()`, etc.
+
+### ✔ Objetos nativos
+
+`Math`, `JSON`, `Date`, etc.
+
+### ✔ APIs del host
+
+En navegador:
+`document`, `localStorage`, `fetch`, etc.
+
+---
+
+# 🔄 **Relación entre Global Environment y Global Object**
+
+### **1. El Global Environment usa al Global Object como su “entorno base”.**
+
+El Global Object provee sus propiedades como si fueran variables globales.
+
+Ejemplo:
+
+```js
+console.log(Math.PI);
+```
+
+→ `Math` existe porque está en el **global object**.
+
+---
+
+### **2. Variables definidas con `var` se agregan al Global Object**
+
+```js
+var a = 10;
+console.log(window.a); // 10 en navegador
+```
+
+✔ Las `var` **se convierten en propiedades del global object**.
+
+Pero:
+
+```js
+let b = 20;
+console.log(window.b); // undefined
+```
+
+✖ `let` y `const` **NO** se agregan al global object;
+se guardan en el **global lexical environment**.
+
+---
+
+# 🧱 Esquema resumido
+
+```
+Global Environment
+ ├─ Global Lexical Environment (let/const)
+ ├─ Global Variable Environment (var)
+ └─ vinculado al → Global Object (window / global)
+```
+
+---
+
+# 🧠 Analogía neurocientífica
+
+### ✔ **Global Object = Memoria semántica universal**
+
+Equivalente a:
+
+- Conocimientos generales del mundo
+- Conceptos siempre disponibles
+- Herramientas básicas del pensamiento
+
+Es lo que **siempre está accesible**:
+como saber qué es “número”, “tiempo”, “espacio”, “comparar”, etc.
+
+→ En el cerebro: **lóbulo temporal**, redes semánticas de alto nivel.
+
+---
+
+### ✔ **Global Environment = Estado cognitivo base**
+
+Es el “contexto inicial” de tu mente al comenzar una tarea:
+
+- El lenguaje que entiendes
+- Las reglas generales del mundo
+- Las herramientas mentales disponibles
+
+→ Conectado a la corteza prefrontal solo cuando ejecutas algo, igual que JS.
+
+---
+
+# 🧠💻 Símil completo
+
+| JavaScript              | Cerebro humano             | Función                                 |
+| ----------------------- | -------------------------- | --------------------------------------- |
+| **Global Object**       | Memoria semántica estable  | Conocimientos permanentes               |
+| **Global Environment**  | Estado cognitivo inicial   | Entorno donde se organizan los procesos |
+| **Execution Context**   | Corteza prefrontal         | Mantener estado y procesar tareas       |
+| **Lexical Environment** | Redes semánticas activadas | Significados según contexto             |
+
+---
+
+# 📌 Conclusión rápida
+
+- **Global Environment** → el _entorno raíz_ donde viven todas las variables globales.
+- **Global Object** → el _objeto universal_ con funciones y recursos globales.
+- Se relacionan:
+
+  - `var` y funciones globales **van al global object**
+  - `let/const` **van al global lexical environment**
