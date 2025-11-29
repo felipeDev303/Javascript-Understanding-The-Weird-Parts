@@ -17,3 +17,4 @@ Alerta de palabras grandes: este curso utiliza términos técnicos y conceptos a
 5. [Scope & Scope Chain](./5.%20Scope%20%26%20Scope%20Chain.md)
 6. [Function Invocation & The Execution Stack](./6.%20Function%20Invocation%20%26%20The%20Execution%20Stack.md)
 7. [Function, Context & Variable Environments](./7.%20Function%2C%20Context%20%26%20Variable%20Environments.md)
+8. [The Scope Chain](./8.%20The%20Scope%20Chain.md)

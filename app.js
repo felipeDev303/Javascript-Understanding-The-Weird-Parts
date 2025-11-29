@@ -1,14 +1,13 @@
-function b() {
-  var myVar;
-  console.log(myVar);
-}
+let a = 10;
 
-function a() {
-  var myVar = 2;
-  console.log(myVar);
-  b();
-}
+function outer() {
+  let b = 20;
 
-var myVar = 1;
-console.log(myVar);
-a();
+  function inner() {
+    let c = 30;
+    console.log(a, b, c);
+  }
+
+  inner();
+}
+outer();
