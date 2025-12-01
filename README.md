@@ -4,10 +4,6 @@
 
 No imites, entiende. Este repositorio contiene recursos y notas para el curso "Javascript: Understanding the Weird Parts". El objetivo es profundizar en los conceptos fundamentales de JavaScript y comprender su funcionamiento interno.
 
-## Big Words Alert
-
-Alerta de palabras grandes: este curso utiliza términos técnicos y conceptos avanzados. Si no estás familiarizado con ellos, tómate tu tiempo para investigar y comprender cada uno.
-
 ## Índice Temático
 
 1. [Syntax Parsers, Lexical Environments y Execution Contexts](./1.%20Syntax%20Parsers%2C%20Lexical%20Environments%20y%20Execution%20Contexts.md)
@@ -24,10 +20,12 @@ Alerta de palabras grandes: este curso utiliza términos técnicos y conceptos a
 12. [Primitive Types](./12.%20Primitive%20Types.md)
 13. [Operators](./13.%20Operators.md)
 14. [Associativity](./15.%20Asociativity.md)
-15. [Comparison Operators](./16.%20Comparison%20Operators.md)
-16. [Existence and Booleans](./17.%20Existence%20and%20Booleans.md)
-17. [Default Values](./18.%20Default%20Values.md)
-18. [Object Literals](./19.%20Object%20Literals.md)
+15. [Coercion](./16.%20Coercion.md)
+16. [Comparison Operators](./17.%20Comparison%20Operators.md)
+17. [Existence and Booleans](./18.%20Existence%20and%20Booleans.md)
+18. [Default Values](./19.%20Default%20Values.md)
+19. [Object Literals](./20.%20Object%20Literals.md)
+20. [Objects & The Dot](./21.%20Objects%20%26%20The%20Dot.md)
 
 ---
 
@@ -112,3 +110,27 @@ Reglas que determinan qué operador se evalúa primero en una expresión. Ejempl
 ### 20. Associativity
 
 Dirección en que se evalúan operadores con la misma precedencia. Puede ser left-to-right (como `+`, `-`) o right-to-left (como `=`, `**`).
+
+### 21. Type Coercion
+
+Conversión automática (implícita) o manual (explícita) de valores de un tipo a otro. JavaScript realiza coerción automáticamente en operaciones mixtas.
+
+### 22. Comparison Operators
+
+Operadores que comparan valores: `==` (igualdad con coerción), `===` (igualdad estricta sin coerción), `<`, `>`, `<=`, `>=`, `!=`, `!==`.
+
+### 23. Truthy y Falsy
+
+Valores que se convierten a `true` o `false` en contextos booleanos. Falsy: `false`, `0`, `""`, `null`, `undefined`, `NaN`, `-0`. Todo lo demás es truthy.
+
+### 24. Default Values
+
+Valores por defecto para variables o parámetros usando `||`, `??` (nullish coalescing), o sintaxis ES6 de parámetros por defecto.
+
+### 25. Object Literals
+
+Notación `{}` para crear objetos directamente. ES6 añade shorthand properties, computed properties, métodos shorthand, y spread operator.
+
+### 26. Objects & Property Access
+
+Objetos son colecciones de pares nombre-valor. Acceso con dot notation (`obj.prop`) o bracket notation (`obj["prop"]`). Dot es más rápido y legible, bracket permite acceso dinámico.
